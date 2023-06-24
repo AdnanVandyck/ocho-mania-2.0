@@ -7,6 +7,11 @@ require('dotenv').config()
 const app = express();
 const PORT = process.env.PORT
 
+// Events
+const eventsController = require('./controllers/events_controller.js');
+
+app.use('/events', eventsController)
+
 // ROUTES
 // HOMEPAGE
 app.get('/', (req, res) => {
